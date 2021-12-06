@@ -26,7 +26,8 @@ echo "Now just check the pacman.conf IN CASE something went wrong"
 doas nvim /etc/pacman.conf
 echo "After that, we download important packages from the Arch Repositories"
 sleep 5
-doas pacman -S xorg doas xorg-xinit git zsh nitrogen neovim exa dust duf libreoffice-fresh htop pcmanfm cmus mpv sxiv xfce4-screenshoter
+doas pacman -Syy
+doas pacman -S networkmanager-runit xorg doas xorg-xinit git zsh nitrogen neovim exa dust duf libreoffice-fresh htop pcmanfm cmus mpv sxiv xfce4-screenshoter
 echo "Now we need to pull dwm and st, my configs basically (also .zshrc and .vimrc)."
 sleep 5
 cd ~/.config
@@ -56,7 +57,7 @@ cd $HOME/.config/slock
 doas make clean install
 cd $HOME/.config/slstatus
 doas make clean install
-cp ~/.config/x-related-stuff/xinit .
+cp ~/.config/x-related-stuff/xinit ~/.
 mv xinit .xinitrc
 echo "I think everything is good now, just run startx"
 echo "Removing File System"
