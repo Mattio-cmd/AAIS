@@ -27,7 +27,7 @@ doas nvim /etc/pacman.conf
 echo "After that, we download important packages from the Arch Repositories"
 sleep 5
 doas pacman -Syy
-doas pacman -S networkmanager-runit xorg doas xorg-xinit git zsh nitrogen neovim exa dust duf libreoffice-fresh htop pcmanfm cmus mpv sxiv xfce4-screenshoter
+doas pacman -S networkmanager-runit xorg doas xorg-xinit git zsh nitrogen neovim exa dust duf ripgrep zsh-syntax-highlighting xdotool libreoffice-fresh htop pcmanfm cmus mpv sxiv xfce4-screenshoter
 echo "Now we need to pull dwm and st, my configs basically (also .zshrc and .vimrc)."
 sleep 5
 cd ~/.config
