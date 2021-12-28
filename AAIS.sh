@@ -37,7 +37,7 @@ git clone https://github.com/Mattio-cmd/slock
 git clone https://github.com/Mattio-cmd/slstatus
 git clone https://github.com/Mattio-cmd/x-related-stuff
 git clone https://github.com/Mattio-cmd/my-zshrc
-git clone https://github.com/Mattio-cmd/nvim
+git clone https://github.com/Mattio-cmd/nvim-lua
 mv my-zshrc/.zshrc ~/
 rm -rf my-zshrc
 mv dwm-config-green dwm-6.2
