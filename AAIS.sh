@@ -13,7 +13,15 @@ permit nopass :wheel cmd reboot" >> /etc/doas.conf
 exit
 echo "Now install the arch repos, this is going to be manual"
 doas pacman -S artix-arch-linux-support
-doas echo "# For arch repos
+doas echo " # Universe repo
+[universe]
+  Server = https://universe.artixlinux.org/$arch
+  Server = https://mirror1.artixlinux.org/universe/$arch
+  Server = https://mirror.pascalpuffke.de/artix-universe/$arch
+  Server = https://artixlinux.qontinuum.space:4443/universe/os/$arch
+  Server = https://mirror.alphvino.com/artix-universe/$arch
+
+# For arch repos
 [extra]
 Include = /etc/pacman.d/mirrorlist-arch
 
@@ -27,7 +35,7 @@ doas nvim /etc/pacman.conf
 echo "After that, we download important packages from the Arch Repositories"
 sleep 5
 doas pacman -Syy
-doas pacman -S networkmanager-runit xorg doas xorg-xinit git zsh nitrogen neovim exa dust duf ripgrep zsh-syntax-highlighting xdotool libreoffice-fresh htop pcmanfm cmus mpv sxiv xfce4-screenshoter
+doas pacman -S networkmanager-runit xorg doas xorg-xinit git zsh nitrogen neovim exa dust duf ripgrep zsh-syntax-highlighting xdotool libreoffice-fresh htop pcmanfm cmus mpv sxiv xfce4-screenshoter librewolf
 echo "Now we need to pull dwm and st, my configs basically (also .zshrc and .vimrc)."
 sleep 5
 cd $HOME/.config
@@ -49,7 +57,7 @@ cd ~/
 cd $HOME/.config
 echo "Lets build dwm!"
 sleep 2
-cd $HOME/.config/dwm-6.2 
+cd $HOME/.config/dwm-6.2
 doas make clean install
 cd $HOME/.config/st
 doas make clean install
